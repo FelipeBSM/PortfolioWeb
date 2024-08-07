@@ -130,6 +130,10 @@ main
         flex: unset;
         width: 100%;
     }
+    .information {
+        padding-left: 0; /* Remove o padding esquerdo */
+        padding-right: 0; /* Remove o padding direito */
+    }
 }
 
 @media (max-width: 480px) {
