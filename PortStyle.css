@@ -1,0 +1,533 @@
+/* Montserrat Font Classes */
+.montserrat-<uniquifier> 
+{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+/* Header */
+header 
+{
+    z-index: 10;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(10, 10, 10, 1);
+    padding: 1rem 5%;
+    height: 60px;
+    border-bottom: 2px solid rgba(200, 200, 200, 1);
+    /*position: fixed; 
+    width: 100%;
+    top: 0; 
+    left: 0; 
+    z-index: 1000;*/
+}
+
+header .logo 
+{
+    font-size: 1.0rem;
+    font-weight: 200;
+    color: white;
+}
+
+nav ul 
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li 
+{
+    padding: 0 1.5rem;
+}
+
+nav ul li a 
+{
+    text-decoration: none;
+    color: rgba(180, 180, 180, 1);
+    font-weight: bold;
+    position: relative;
+}
+
+ul li a::before 
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(240, 240, 240, 1);
+    transform-origin: bottom left;
+    transition: transform 0.55s ease-out;
+    line-height: 80px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+nav ul li a:hover::before 
+{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    color: rgba(240, 240, 240, 1);
+}
+
+nav ul li a:hover 
+{
+    color: rgba(240, 240, 240, 1);
+}
+
+/* Body */
+body 
+{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    background-color: #000000; /* Fundo preto para todo o corpo */
+    /*padding-top: 60px;*/
+}
+
+main 
+{
+    background-color: #000000;    
+}
+
+/* Social Media */
+.social-media 
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.social-media a 
+{
+    color: rgba(200, 200, 200, 1);
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    nav ul.nav-links {
+        display: none; /* Ocultar links de navegação */
+    }
+
+    .intro-stuff {
+        flex-direction: column; /* Coloca a imagem acima do texto */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .face-image-container, .information {
+        flex: unset;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header, .footerClass {
+        padding: 10px;
+    }
+
+    .social-media a img {
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+    }
+
+    .intro-stuff {
+        margin: 20px 0;
+    }
+
+    .information p {
+        font-size: 0.9em;
+    }
+}
+
+/* Intro Section */
+#intro {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 5%;
+    color: #fff;
+    overflow: hidden;
+}
+
+.intro-stuff 
+{
+    display: flex; /* alinha as child divs lado a lado */
+    justify-content: space-around; /* dá um espaço entre elas */
+    align-items: center;
+    max-width: 1200px; 
+    width: 100%; 
+    margin: auto; /* Centraliza o contêiner se a tela for maior que o max-width */
+}
+
+.face-image-container 
+{
+    flex: 3; /* Alocar espaço baseado na necessidade, mas com menos prioridade */
+    padding-right: 1%; /* Espaço entre a imagem e o texto */
+}
+
+.face-image-container img {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 56% 44% 73% 27% / 45% 68% 32% 55%;
+    box-shadow: 10px 10px 100px 1px rgba(200, 200, 200, .2);
+}
+
+.information {
+    flex: 2; /* permite que a div da informação cresça e ocupe o espaço disponível */
+    padding-left: 6%; /* adiciona um pouco de espaço entre a imagem e o texto */
+}
+
+.information h1 {
+    font-size: 50px;
+}
+
+
+/*.video-overlay {
+    position: absolute;
+    top: 60%;
+    right: -10%;
+    transform: translateY(-50%);
+    width: 40%; /* Ajuste a largura conforme necessário 
+    z-index: 10;
+    overflow: hidden;
+    display: none;
+}
+
+.transparent-video {
+    width: 100%;
+    height: auto;
+    opacity: 1; /* Ajuste a transparência conforme necessário 
+    overflow: hidden;
+}
+*/
+
+/* Latest Work Section */
+#latest-work {
+    text-align: center; /* Centraliza o título */
+    padding: 50px 0; /* Adiciona espaço acima e abaixo da seção */
+    background-color: #000000; /* Cor de fundo para a seção */
+    margin-top: 100px;
+}
+
+#latest-work h2 {
+    font-size: 30px;
+    color: white; /* Cor do título */
+    margin-bottom: 60px; /* Espaço abaixo do título */
+}
+
+.current-work-box {
+    display: flex;
+    justify-content: center; /* Centraliza as caixas horizontalmente */
+    gap: 80px; /* Espaço entre as caixas */
+}
+
+.work-item {
+    width: 300px; /* Largura de cada caixa */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que o conteúdo não saia da caixa */
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Muda o cursor para indicar clicabilidade */
+}
+
+.work-item h3 {
+    color: white;
+}
+
+.work-item:hover .image-crop {
+    box-shadow: 10px 10px 100px 1px rgba(200, 200, 200, .1);
+}
+
+.work-item:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente a caixa ao passar o mouse */
+}
+
+.moreInfo 
+{
+    padding: 10px;
+    margin-top: 10px;
+    display: none; /* Começa escondido */
+    transition: all 0.3s ease;
+}
+
+.image-crop 
+{
+    width: 100%;
+    height: 200px; /* Altura fixa para o corte da imagem */
+    overflow: hidden;
+    display: block; /* Certifica que a div contendo a imagem não tem espaço extra */
+    position: relative;
+}
+
+.image-crop::after 
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Altura da barra branca */
+    background-color: white;
+    transition: transform 0.3s ease-out;
+    transform: translateY(90%); /* Inicia escondido abaixo da imagem */
+}
+
+.image-crop .info-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -10px; /* Posiciona ligeiramente acima do fundo para evitar cortes */
+    font-size: 16px; /* Ajuste conforme necessário */
+    color: black; /* Cor do texto */
+    opacity: 0;
+    transition: opacity 0.2s, bottom 0s 1.3s;
+    z-index: 10;
+}
+
+.work-item:hover .image-crop::after {
+    transform: translateY(0);
+    transition: transform 0.3s ease-out; /* Move a imagem e a borda para cima */
+}
+
+.work-item:hover .info-text {
+    transition: opacity .2s .2s, bottom 0s 0s;
+    opacity: 1;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove espaços abaixo da imagem */
+    position: relative;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+}
+
+.work-item p {
+    padding: 10px; /* Espaço interno no texto abaixo da imagem */
+    color: white; /* Cor do texto */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente para o texto */
+}
+
+.work-item:hover .moreInfo {
+    display: block;
+}
+
+/* Seções de Conteúdo */
+#latest-work, #modelos-3d, #jogos, #experiencias {
+    padding: 2rem 5%;
+    color: #000000; /* Texto preto para essas seções */
+}
+
+.section-pattern {
+    padding: 0;
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    text-align: center;
+    margin-top: 100px;
+}
+
+.section-pattern h2 {
+    margin: 10px 0;
+    font-size: 28px;
+    color: #fff;
+}
+
+/* Galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Ajuste para controlar a quantidade de colunas */
+    grid-auto-rows: 150px; /* Altura base para as linhas */
+    gap: 0; /* Sem espaçamento entre itens */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item.tall {
+    grid-row: span 4; /* Item alto, ocupa duas linhas */
+}
+
+.gallery-item.wide {
+    grid-column: span 4; /* Item largo, ocupa duas colunas */
+}
+
+.gallery-item.square {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.gallery-item.square2 {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+}
+
+#modelos-3d h2, #jogos h2, #experiencias h2 {
+    color: #fff; 
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel img.verticalImage {
+    width: 40%; /* Ajuste o tamanho conforme necessário */
+    height: 90%;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+/* Current Games Box */
+.current-games-box {
+    display: flex;
+    justify-content: center; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens se ajustem se a tela for pequena */
+    gap: 20px; /* Reduz o espaçamento entre os itens */
+    margin-top: 20px;
+}
+
+.game-item {
+    max-width: 300px; /* Três itens por linha com espaçamento */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    margin: 10px 0; /* Margem vertical entre os itens */
+    text-align: center; /* Centraliza o conteúdo dentro do item */
+    cursor: pointer;
+}
+
+.game-item img {
+    width: 100%; /* Faz com que a imagem preencha todo o contêiner */
+    border-radius: 10px; /* Borda arredondada nas imagens */
+    transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.game-item img:hover {
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .current-work-box {
+        flex-wrap: wrap; /* Permite que os itens se ajustem se a tela for pequena */
+        gap: 20px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .work-item {
+        max-width: 300px; /* Define a largura máxima das caixas */
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        margin: 10px 0; /* Margem vertical entre os itens */
+        text-align: center; /* Centraliza o conteúdo dentro do item */
+        cursor: pointer; /* Muda o cursor para indicar clicabilidade */
+    }
+}
+
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.carousel-indicators .indicator.active {
+    opacity: 1;
+}
+
+@media(max-width:768px) 
+{
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+}
