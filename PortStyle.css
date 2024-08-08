@@ -538,7 +538,7 @@ footer {
 .video-render-item 
 {
     flex: 1; /* Faz com que todos os itens tenham a mesma largura */
-    max-width: 350px; /* Define a largura máxima dos vídeos */
+    max-width: 300px; /* Define a largura máxima dos vídeos */
     box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
     margin: 10px; /* Margem entre os itens */
     text-align: center; /* Centraliza o conteúdo dentro do item */
