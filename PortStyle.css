@@ -527,6 +527,29 @@ footer {
     opacity: 1;
 }
 
+.videos-box 
+{
+    display: flex;
+    justify-content: center; /* Centraliza os vídeos na caixa */
+    gap: 20px; /* Espaço entre os vídeos */
+    margin-top: 20px; /* Espaço acima da seção de vídeos */
+}
+
+.video-render-item 
+{
+    flex: 1; /* Faz com que todos os itens tenham a mesma largura */
+    max-width: 350px; /* Define a largura máxima dos vídeos */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    margin: 10px; /* Margem entre os itens */
+    text-align: center; /* Centraliza o conteúdo dentro do item */
+}
+
+.video-render-item video {
+    width: 100%; /* Faz com que o vídeo preencha todo o contêiner */
+    border-radius: 10px; /* Borda arredondada nos vídeos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
 @media(max-width:768px) 
 {
 
