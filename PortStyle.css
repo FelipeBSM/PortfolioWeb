@@ -145,7 +145,14 @@ main
     .social-media a img {
         width: 25px;
         height: 25px;
-        margin: 0 5px;
+        margin: 0 2px;
+    }
+    .social-media a {
+        color: rgba(200, 200, 200, 1);
+        padding: 0 0.3rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     .intro-stuff {
@@ -430,6 +437,44 @@ footer {
 .carousel img {
     width: 100%;
     display: block;
+    transition: filter 0.3s ease; 
+}
+
+
+
+.carousel:hover .carousel-overlay {
+    opacity: 1; 
+    cursor: pointer;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; 
+    height: 150px; 
+
+    border-radius: 50%; 
+}
+
+.artstation-icon {
+    width: auto;
+    height: auto;
+    opacity: 0.9;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    transition: opacity 0.3s ease;
 }
 
 .carousel-buttons {
@@ -550,6 +595,38 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
+.social-media-bottom 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 3%;
+}
+
+.social-media-bottom a
+{
+    color: rgba(200, 200, 200, 1);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.social-media-bottom a:hover
+{
+    color: rgba(200, 200, 200, 1);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+.social-media-bottom a img {
+    width: 120px;
+    height: 120px;
+}
+
 @media(max-width:768px) 
 {
 
@@ -571,6 +648,32 @@ footer {
         cursor: pointer;
         opacity: 0.5;
         transition: opacity 0.3s;
+    }
+    .carousel-overlay {
+        display: none; /* Remove o overlay e a logo em telas menores */
+    }
+
+    .carousel-link:hover img {
+        filter: none; /* Remove o desfoque em dispositivos móveis */
+    }
+
+    .carousel-link {
+        pointer-events: none; /* Desativa o clique no carrossel em dispositivos móveis */
+    }
+
+    .social-media-bottom a img {
+        width: 55px;
+        height: 55px;
+        margin: 0 5px;
+    }
+
+    .social-media-bottom a {
+        color: rgba(200, 200, 200, 1);
+        padding: 0 0.5rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
     }
 
 }
