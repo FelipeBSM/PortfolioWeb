@@ -3205,3 +3205,116 @@ to {
         --y: 0px;
     }
 }
+
+
+/* =====================================================
+   PORTFOLIO V2 — editorial, media-first project showcase
+   Adds hierarchy without changing the site's playful DNA.
+   ===================================================== */
+.portfolio-realm .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2vw, 30px);
+    align-items: stretch;
+}
+.portfolio-realm .portfolio-card {
+    min-width: 0;
+    min-height: 0;
+    border-radius: 23px;
+    transform-style: flat;
+}
+.portfolio-realm .portfolio-card .card-scene {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    background: #151515;
+}
+.portfolio-realm .portfolio-card .card-scene-video {object-fit: cover;}
+.portfolio-realm .portfolio-card .portfolio-card-body {padding: clamp(19px, 2vw, 30px);}
+.portfolio-realm .portfolio-card h3 {font-size: clamp(32px, 3vw, 46px);}
+.portfolio-realm .portfolio-card p {font-size: 14px; line-height: 1.65;}
+.portfolio-realm .portfolio-card .tag-row {margin-top: 12px;}
+.portfolio-realm .portfolio-card .tag-row span {font-size: 11px; padding: 6px 9px;}
+.portfolio-realm .portfolio-card.featured-project {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+    min-height: 390px;
+    background: #fff7d6;
+}
+.portfolio-realm .featured-project .card-scene {
+    height: 100%; min-height: 390px; aspect-ratio: auto;
+    border-bottom: 0; border-right: 4px solid #111;
+}
+.portfolio-realm .featured-project .portfolio-card-body {justify-content: center;}
+.portfolio-realm .featured-project h3 {font-size: clamp(46px, 5vw, 78px);}
+.portfolio-realm .featured-project p {font-size: clamp(14px, 1.25vw, 17px);}
+.portfolio-realm .featured-project::after {
+    content: 'FEATURED PROJECT'; position: absolute; right: 22px; top: 17px;
+    padding: 7px 12px; background: var(--yellow); border: 2px solid #111;
+    border-radius: 20px; font: 17px 'Bangers', sans-serif; letter-spacing: 1px;
+    box-shadow: 3px 3px 0 #111; pointer-events: none;
+}
+.portfolio-realm .featured-project {position:relative;}
+.portfolio-realm .featured-project .portfolio-card-body {padding-top: 55px;}
+.project-preview {position: relative; isolation: isolate;}
+.scene-tetris {background: repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 2px,transparent 2px 8px),radial-gradient(circle at 25% 25%,#3059ab,#090e29 75%) !important;}
+.scene-2d {background: radial-gradient(circle at 80% 20%,#d65c9d,#542bb5 50%,#17162b) !important;}
+.project-pending {height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;color:white;text-align:center;padding:24px;}
+.project-pending .preview-symbol {font-size:68px;line-height:1;animation:none;filter:none;color:var(--yellow);}
+.project-pending strong {font:clamp(39px,5vw,65px)/1 'Bangers',sans-serif;letter-spacing:3px;}
+.project-pending > span:last-child {font-size:10px;letter-spacing:2px;font-weight:900;opacity:.75;}
+.media-corner-label {position:absolute;right:14px;top:14px;z-index:12;color:#111;background:var(--yellow);padding:7px 10px;border:2px solid #111;border-radius:99px;font-size:10px !important;font-family:Manrope,sans-serif;font-weight:900;letter-spacing:1px;animation:none !important;filter:none !important;}
+@media (max-width: 800px) {
+    .portfolio-realm .portfolio-grid {grid-template-columns:1fr;}
+    .portfolio-realm .portfolio-card.featured-project {display:flex;flex-direction:column;grid-column:auto;min-height:0;}
+    .portfolio-realm .featured-project .card-scene {aspect-ratio:16 / 9;height:auto;min-height:0;border-right:0;border-bottom:4px solid #111;}
+    .portfolio-realm .featured-project h3 {font-size:clamp(40px,9vw,63px);}
+    .portfolio-realm .featured-project .portfolio-card-body {padding-top:48px;}
+    .portfolio-realm .featured-project::after {top:auto;bottom:calc(100% - 30px);right:12px;}
+}
+@media (prefers-reduced-motion: reduce) {
+    .project-pending, .portfolio-realm .portfolio-card {animation:none !important;}
+}
+
+/* =====================================================
+   PORTFOLIO V2.1 — compact gallery refinement
+   Keeps featured hierarchy while reducing scroll length.
+   ===================================================== */
+.portfolio-realm {padding: clamp(22px, 3vw, 40px); margin: 46px 0;}
+.portfolio-realm .realm-header {margin-bottom: 28px;}
+.portfolio-realm .portfolio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+.portfolio-realm .portfolio-card {border-radius: 18px; border-width: 3px; box-shadow: 5px 5px 0 #111;}
+.portfolio-realm .portfolio-card .card-scene {aspect-ratio: 16 / 9; border-bottom-width: 3px;}
+.portfolio-realm .portfolio-card .portfolio-card-body {padding: 17px;}
+.portfolio-realm .portfolio-card h3 {font-size: clamp(27px, 2.3vw, 37px); margin: 7px 0 9px;}
+.portfolio-realm .portfolio-card p {font-size: 12.5px; line-height: 1.55; margin-bottom: 12px;}
+.portfolio-realm .portfolio-card small {font-size: 10px;}
+.portfolio-realm .portfolio-card .tag-row {gap: 5px; margin-top: 10px; margin-bottom: 12px;}
+.portfolio-realm .portfolio-card .tag-row span {font-size: 10px; padding: 4px 7px; border-width: 1.5px;}
+.portfolio-realm .portfolio-card .project-link {font-size: 15px; padding: 6px 10px; border-width: 2px; box-shadow: 2px 2px 0 #111;}
+.portfolio-realm .portfolio-card.featured-project {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    min-height: 285px;
+}
+.portfolio-realm .featured-project .card-scene {height:100%; min-height:285px; aspect-ratio:auto; border-bottom:0; border-right:3px solid #111;}
+.portfolio-realm .featured-project .portfolio-card-body {padding: 30px 23px 19px;}
+.portfolio-realm .featured-project h3 {font-size: clamp(35px, 3.6vw, 54px);}
+.portfolio-realm .featured-project p {font-size: 13px;}
+.portfolio-realm .featured-project::after {font-size:12px; top:11px; right:12px; padding:5px 9px;}
+.project-pending .preview-symbol {font-size:48px;}
+.project-pending strong {font-size:clamp(28px,3.5vw,48px);}
+@media (max-width: 1100px) and (min-width: 701px) {
+    .portfolio-realm .portfolio-grid {grid-template-columns:repeat(2, minmax(0,1fr));}
+}
+@media (max-width: 700px) {
+    .portfolio-realm {padding:18px; margin:35px 0;}
+    .portfolio-realm .portfolio-grid {grid-template-columns:1fr; gap:17px;}
+    .portfolio-realm .portfolio-card.featured-project {display:flex; flex-direction:column; grid-column:auto; min-height:0;}
+    .portfolio-realm .featured-project .card-scene {aspect-ratio:16 / 9; height:auto; min-height:0; border-right:0; border-bottom:3px solid #111;}
+    .portfolio-realm .featured-project .portfolio-card-body {padding:19px 17px;}
+    .portfolio-realm .featured-project h3 {font-size:36px;}
+    .portfolio-realm .featured-project::after {top:10px;bottom:auto;right:10px;}
+}

@@ -311,8 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const rect = card.getBoundingClientRect();
                 const x = event.clientX - rect.left;
                 const y = event.clientY - rect.top;
-                const rotateY = ((x / rect.width) - 0.5) * 9;
-                const rotateX = ((y / rect.height) - 0.5) * -9;
+                const rotateY = ((x / rect.width) - 0.5) * (card.classList.contains("portfolio-card") ? 2 : 9);
+                const rotateX = ((y / rect.height) - 0.5) * (card.classList.contains("portfolio-card") ? -2 : -9);
 
                 card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
             });
